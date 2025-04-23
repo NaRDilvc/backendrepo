@@ -1,11 +1,21 @@
 from fastapi import FastAPI, Query, Path, Body
+from fastapi.middleware.cors import CORSMiddleware
 import logging
 
-# Logging config
+# Setup logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = FastAPI()
+
+# Enable CORS for local React frontend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # For development; change to specific domains in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Root route
 @app.get("/")
