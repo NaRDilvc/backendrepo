@@ -14,7 +14,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "https://my-fastapi-backend-ajenfcfqejehav4d.southeastasia-01.azurewebsites.net"
+        "https://wonderful-glacier-00dcf8400.6.azurestaticapps.net"
     ],
     allow_credentials=True,
     allow_methods=["*"],
